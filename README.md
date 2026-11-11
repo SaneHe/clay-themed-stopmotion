@@ -23,7 +23,7 @@
 请安装这个 Codex skill：https://github.com/SaneHe/clay-themed-stopmotion
 ```
 
-Codex 会负责获取、校验并安装，不需要用户手动运行 `git clone`、`cp` 或设置 `CODEX_HOME`。安装完成后，从下一轮对话开始即可使用，也可以在请求中显式写 `$clay-themed-stopmotion`。
+Codex 会负责获取、校验并安装，用户不需要手动操作命令行或配置 skill 目录。安装完成后，从下一轮对话开始即可使用，也可以在请求中显式写 `$clay-themed-stopmotion`。
 
 如果已经安装过旧版本，直接告诉 Codex：
 
