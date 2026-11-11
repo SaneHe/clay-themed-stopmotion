@@ -6,33 +6,32 @@
 
 ## 安装
 
-这是一个给 Codex 读取的 skill，不是单独运行的剪辑器。安装后，在 Codex 中提出视频需求，Codex 会按 `SKILL.md` 的规则建立项目、生成素材、编排时间线并导出视频。
+这是一个给 Codex 读取的 skill，不是需要用户手动复制目录的独立剪辑器。安装后，在 Codex 中提出视频需求，Codex 会按 `SKILL.md` 的规则建立项目、生成素材、编排时间线并导出视频。
 
-### 从 GitHub 安装
+### 通过 Codex Skill Installer 安装
 
-在终端执行：
+直接在 Codex 中告诉它：
 
-```bash
-SKILLS_DIR="${CODEX_HOME:-$HOME/.codex}/skills"
-mkdir -p "$SKILLS_DIR"
-git clone https://github.com/SaneHe/clay-themed-stopmotion.git \
-  "$SKILLS_DIR/clay-themed-stopmotion"
+```text
+请使用 Skill Installer，从 GitHub 仓库 SaneHe/clay-themed-stopmotion 安装根目录的 skill，
+并将安装名称设为 clay-themed-stopmotion。
 ```
 
-如果已经安装过，使用下面的命令更新：
+也可以直接把仓库链接交给 Codex：
 
-```bash
-git -C "${CODEX_HOME:-$HOME/.codex}/skills/clay-themed-stopmotion" pull --ff-only
+```text
+请安装这个 Codex skill：https://github.com/SaneHe/clay-themed-stopmotion
 ```
 
-安装后重新打开 Codex 或开始一个新会话，让 skill 被重新发现。它保持自动发现；也可以在请求中显式写 `$clay-themed-stopmotion`。
+Codex 会负责获取、校验并安装，不需要用户手动运行 `git clone`、`cp` 或设置 `CODEX_HOME`。安装完成后，从下一轮对话开始即可使用，也可以在请求中显式写 `$clay-themed-stopmotion`。
 
-### 从本地目录安装
+如果已经安装过旧版本，直接告诉 Codex：
 
-```bash
-SKILLS_DIR="${CODEX_HOME:-$HOME/.codex}/skills"
-cp -R ./clay-themed-stopmotion "$SKILLS_DIR/clay-themed-stopmotion"
+```text
+请从 GitHub 更新 clay-themed-stopmotion skill 到最新版本。
 ```
+
+Codex 会先检查现有安装，再按需要更新；不要手动复制 skill 目录。
 
 ## 怎么使用
 
@@ -91,7 +90,7 @@ npm run render:vertical                              # 需要竖屏时
 
 ## 使用方式
 
-把这个目录作为 Codex skill 安装或复制到 `$CODEX_HOME/skills/`，然后让 Codex 按当前 brief 生成视频工程。主题内容来自用户当前需求；仓库中的规则不会预设城市、日期、职业、交通线或固定角色。
+安装完成后，让 Codex 按当前 brief 生成视频工程。主题内容来自用户当前需求；仓库中的规则不会预设城市、日期、职业、交通线或固定角色。
 
 开发阶段建议运行：
 
